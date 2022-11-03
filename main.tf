@@ -1,3 +1,17 @@
+erraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version => "4.37.0"
+    }
+  }
+}
+
+provider "aws" {
+  region = "eastus"
+}
+
+
 data "aws_partition" "current" {}
 data "aws_caller_identity" "current" {}
 data "aws_default_tags" "current" {}
