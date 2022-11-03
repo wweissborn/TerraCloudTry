@@ -12,7 +12,9 @@ provider "aws" {
   region = var.region
 }
 
-data "aws_availability_zones" "available" {}
+data "aws_availability_zones" "available" {
+  state = "available"
+}
 
 locals {
   cluster_name = "education-eks-${random_string.suffix.result}"
